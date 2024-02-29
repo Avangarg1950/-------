@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative; /* Добавлено для звездного фона */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('stars.jpg') repeat; /* Замените 'stars.jpg' на ваше изображение звезд */
+    opacity: 0.8;
+    pointer-events: none; /* Запрет взаимодействия с фоновым изображением */
+}
+.container {
+    width: 100%;
+    max-width: 1200px; /* Set your preferred maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the total width */
+  }
+body:hover::before {
+    animation: stars 120s linear infinite;
+}
+
+#main-container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #fff;
+    padding: 8px;
+    text-align: left;
+}
+
+@keyframes stars {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 5px;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    section {
+        margin-top: 10px;
+    }
+
+    article img {
+        margin-top: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+}
